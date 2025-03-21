@@ -13,4 +13,4 @@ while i < j:
 if is_palindrome:
     print("Yes") 
 else:
-    print("no") 
+    print("no") # chnged to lower case
