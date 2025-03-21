@@ -10,4 +10,7 @@ while i < j:
     i += 1
     j -= 1
 
-if is_pali
+if is_palindrome:
+    print("Yes") 
+else:
+    print("No")  
