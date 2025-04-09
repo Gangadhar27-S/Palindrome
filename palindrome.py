@@ -1,16 +1,10 @@
-s = "malayalam"  # string
-
-i,j = 0, len(s) - 1  # two pointers
-
-is_palindrome = True  # assume palindrome
-while i < j:
-    if s[i] != s[j]:  # mismatch found
-        is_palindrome = False
-        break
-    i += 1
-    j -= 1
-
-if is_palindrome:
-    print("Yes") 
-else:
-    print("No")  
+def is_palindrome(string):
+   reversed_string=""
+   # transversing through string from last
+   for i in range(len(string),0,-1):
+      # Addind last characters of string into a new string
+      reversed_string+=string[i-1]
+      if string==reversed_string:
+         print("Palindrome")
+      else:
+         print("Not a palindrome")
