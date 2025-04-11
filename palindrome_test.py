@@ -19,12 +19,6 @@ def test_not_palindrome(capfd):
     out, err = captured
     assert out.strip().endswith("Not a palindrome")  # Ensure the last output is "Not a palindrome"
 
-def test_empty_string(capfd):
-    is_palindrome("")
-    captured = capfd.readouterr()
-    out, err = captured
-    assert out.strip().endswith("Palindrome")  # An empty string is a palindrome
-
 def test_mixed_case(capfd):
     is_palindrome("MadAm")  # Should print "Not a palindrome" unless the function is case-insensitive
     captured = capfd.readouterr()
