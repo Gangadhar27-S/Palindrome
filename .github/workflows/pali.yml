@@ -31,11 +31,15 @@ jobs:
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
+    - name: Build program
+      run: |
+        python setup.py sdist
+
     - name: Upload Build Artifacts
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v3
       with:
-         name: My-Artifact
-         path: Public\Documents\Artifacts
+         name: dist-artifacts
+         path: dist/
          
     - name: Test with pytest
       run: |
@@ -51,10 +55,10 @@ jobs:
        - name: Download Artifact
        - uses: actions/download-artifact@v4
          with:
-           name: My-Artifact
-           path: Public\Documents\Artifacts
+           name: dist-artifacts
+           path: Artifacts
        - name: Display structure of downloaded files
-         run: ls -R Public\Documents\Artifacts
+         run: ls -R Artifacts
  
 
   
